@@ -113,6 +113,17 @@ cd tvproxy
 docker build -t tvproxy .
 
 docker run -d -p 7860:7860 \
+  --name tvproxy tvproxy
+```
+
+se vuoi aggiungere una variabile allora diventa cosi (esempio PROXY):
+
+```bash
+git clone https://github.com/nzo66/tvproxy.git
+cd tvproxy
+docker build -t tvproxy .
+
+docker run -d -p 7860:7860 \
   -e PROXY=socks5://user:pass@proxy.com:1080 \
   -e DADDY_PROXY=socks5://user:pass@daddy-proxy.com:1080 \
   --name tvproxy tvproxy
