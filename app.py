@@ -674,7 +674,10 @@ def rewrite_m3u_links_streaming(m3u_lines_iterator, base_url, api_password):
                 # --- LOGICA CON PASSWORD (ESISTENTE) ---
                 processed_url_content = logical_line
                 
-                if 'vixsrc.to' in logical_line:
+                if 'vavoo.to' in logical_line:
+                    processed_url_content = f"{base_url}/proxy/hls/manifest.m3u8?api_password={api_password}&d={logical_line}"
+                    app.logger.info(f"Riscritto Vavoo: {logical_line[:50]}... -> {processed_url_content[:50]}...")
+                elif 'vixsrc.to' in logical_line:
                     processed_url_content = f"{base_url}/extractor/video?host=VixCloud&redirect_stream=true&api_password={api_password}&d={logical_line}"
                     app.logger.info(f"Riscritto VixCloud: {logical_line[:50]}... -> {processed_url_content[:50]}...")
                 elif '.m3u8' in logical_line:
