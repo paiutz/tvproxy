@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tvproxy
     ports:
       - "7860:7860"
     restart: unless-stopped
