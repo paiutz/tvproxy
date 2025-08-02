@@ -16,7 +16,7 @@ services:
       - VERIFY_SSL=false
       
       # =============================================================================
-      # CONFIGURAZIONE PROXY
+      # CONFIGURAZIONE PROXY OPZIONALE
       # =============================================================================
       - PROXY=
       - DADDY_PROXY=
